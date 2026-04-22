@@ -1,10 +1,9 @@
-﻿using Xunit;
 
 namespace Soenneker.Constants.Logs.Tests;
 
 public class LogsConstantsTests
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
