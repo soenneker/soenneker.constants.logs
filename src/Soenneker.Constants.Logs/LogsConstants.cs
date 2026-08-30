@@ -1,17 +1,17 @@
 ﻿namespace Soenneker.Constants.Logs;
 
 /// <summary>
-/// Various common logging constants
+/// Provides shared names and formatting values for logging components.
 /// </summary>
 public static class LogsConstants
 {
     /// <summary>
-    /// The new line separator.
+    /// A visual separator for plain-text log output.
     /// </summary>
     public const string NewLineSeparator = "*************************************************";
 
     /// <summary>
-    /// The default directory.
+    /// The conventional relative directory name for log files.
     /// </summary>
     public const string DefaultDirectory = "Logs";
 }

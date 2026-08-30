@@ -5,7 +5,7 @@
 
 # Soenneker.Constants.Logs
 
-Various common logging constants.
+Provides the conventional log-directory name and visual separator used by Soenneker logging components.
 
 ## Install
 
@@ -13,6 +13,22 @@ Various common logging constants.
 dotnet add package Soenneker.Constants.Logs
 ```
 
-## What you get
+## Values
 
-- `LogsConstants` — Various common logging constants.
+| Constant | Value | Intended use |
+| --- | --- | --- |
+| `LogsConstants.DefaultDirectory` | `"Logs"` | Relative directory name for log files |
+| `LogsConstants.NewLineSeparator` | `"*************************************************"` | Visual separator for plain-text log output |
+
+## Usage
+
+```csharp
+using Soenneker.Constants.Logs;
+
+string logDirectory = Path.Combine(AppContext.BaseDirectory, LogsConstants.DefaultDirectory);
+logger.LogInformation("{Separator}", LogsConstants.NewLineSeparator);
+```
+
+`DefaultDirectory` is relative; resolve it against an application-owned base path rather than assuming the process working directory. This package does not create directories, configure a logging provider, rotate files, or define retention.
+
+These are compile-time constants, so their values are embedded into consuming assemblies. Rebuild consumers after upgrading if a value changes.
